@@ -8,6 +8,7 @@
 
 // add the require assignment to get access to the variables from 4-names.js
 const names = require('./4-names');
+// here we could have destructured: { john, peter } = require('./4-names')
 
 console.log('names: ', names); // this shows us the object with our {john: 'john', peter: 'peter'}
 // this proves we now have access to the variables
