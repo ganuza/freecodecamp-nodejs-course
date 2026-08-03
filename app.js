@@ -13,6 +13,7 @@ console.log('names: ', names); // this shows us the object with our {john: 'john
 // this proves we now have access to the variables
 
 // only 1 more thing: we need access to our function in the utils file
+const sayHi = require('./5-utils');
 
-sayHello('Susan');
-sayHello(john);
+sayHi('Susan');
+sayHi(names.john);
