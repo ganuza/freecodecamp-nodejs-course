@@ -6,5 +6,13 @@
 // modules allow us to separate code into separate files that we can access throughout our application
 // this allows us to have smaller files and add structure to our app
 
+// add the require assignment to get access to the variables from 4-names.js
+const names = require('./4-names');
+
+console.log('names: ', names); // this shows us the object with our {john: 'john', peter: 'peter'}
+// this proves we now have access to the variables
+
+// only 1 more thing: we need access to our function in the utils file
+
 sayHello('Susan');
 sayHello(john);
