@@ -26,3 +26,5 @@ sayHi(names.john);
 
 require('./7-mind-grenade');
 // This runs the function that is invoked in the 7-mind-grenade file
+// WHEN YOU IMPORT A MODULE, YOU ACTUALLY INVOKE IT!!!
+//
