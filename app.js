@@ -16,5 +16,10 @@ console.log('names: ', names); // this shows us the object with our {john: 'john
 // only 1 more thing: we need access to our function in the utils file
 const sayHi = require('./5-utils');
 
+// Now we can import our alternative export methods as data
+
+const data = require('./6-alternative-exports');
+console.log('data: ', data);
+
 sayHi('Susan');
 sayHi(names.john);
