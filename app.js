@@ -23,3 +23,6 @@ console.log('data: ', data);
 
 sayHi('Susan');
 sayHi(names.john);
+
+require('./7-mind-grenade');
+// This runs the function that is invoked in the 7-mind-grenade file
