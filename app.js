@@ -23,7 +23,7 @@ console.log('data: ', data);
 
 // import for 5.5-object-export
 const name = require('./5.5-object-export');
-console.log('object name: ', name);
+console.log('object name: ', name); // you exported person.name
 
 sayHi('Susan');
 sayHi(names.john);
