@@ -21,6 +21,10 @@ const sayHi = require('./5-utils');
 const data = require('./6-alternative-exports');
 console.log('data: ', data);
 
+// import for 5.5-object-export
+const name = require('./5.5-object-export');
+console.log('object name: ', name);
+
 sayHi('Susan');
 sayHi(names.john);
 
