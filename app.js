@@ -28,7 +28,7 @@ console.log('object name: ', name); // you exported person.name
 sayHi('Susan');
 sayHi(names.john);
 
-require('./7-mind-grenade');
+require('./7-mind-grenade.js');
 // This runs the function that is invoked in the 7-mind-grenade file
 // WHEN YOU IMPORT A MODULE, YOU ACTUALLY INVOKE IT!!!
 //
