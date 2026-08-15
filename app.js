@@ -10,13 +10,12 @@ const server = createServer((req, res) => {
   // it is sent along with a bunch of other useful data
 
   if (req.url === '/') {
-    res.write('Welcome to our home page!'); // method to write response
-    res.end(); // method that signals to the server that all response headers and body have been sent, closing the active HTTP connection
-  }
-  if (req.url === '/about') {
+    // res.write('Welcome to our home page!'); // method to write response
+    res.end('Welcome to our home page!'); // method that signals to the server that all response headers and body have been sent, closing the active HTTP connection
+  } else if (req.url === '/about') {
     res.end('Here is our short history');
-  }
-  res.end(`
+  } else
+    res.end(`
     <h1>OOPS!</h1>
     <p>We can't seem to find the page you're looking for</p>
     <a href='/'>back home</a>
