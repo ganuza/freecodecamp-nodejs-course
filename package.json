@@ -1,0 +1,16 @@
+{
+  "name": "freecodecamp-nodejs-course",
+  "version": "1.0.0",
+  "main": "1-intro.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lodash-es": "^4.18.1"
+  }
+}
