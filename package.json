@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "1-intro.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

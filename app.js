@@ -56,3 +56,5 @@ const items = [1, [2, [3, [4]]]];
 
 const flatItems = flattenDeep(items);
 console.log('flatItems: ', flatItems);
+
+console.log('Hello World!');
