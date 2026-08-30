@@ -1,11 +1,11 @@
 // re-create the readFile() writeFile() setup
 
-import fs, { readFile, writeFile } from 'fs';
-import util, { promisify } from 'util';
+import fs, { readFile, writeFile } from 'node:fs/promises';
+// import util, { promisify } from 'util';
 
-console.log('util: ', util);
-const readFilePromise = promisify(readFile);
-const writeFilePromise = promisify(writeFile);
+// console.log('util: ', util);
+// const readFilePromise = promisify(readFile);
+// const writeFilePromise = promisify(writeFile);
 // create a new function to get text using promise
 // we want to take in a path and return a promise
 // then move the readFile function into the new function
@@ -24,11 +24,11 @@ const writeFilePromise = promisify(writeFile);
 
 const showText = async () => {
   try {
-    const firstText = await readFilePromise('./content/first.txt', 'utf8');
+    const firstText = await readFile('./content/first.txt', 'utf8');
     console.log('Success: ', firstText);
-    const secondText = await readFilePromise('./content/second.txt', 'utf8');
+    const secondText = await readFile('./content/second.txt', 'utf8');
     console.log('Success: ', secondText);
-    const newText = await writeFilePromise(
+    const newText = await writeFile(
       './content/result-promisify-write-file.txt',
       `${firstText}, ${secondText}`,
     );
