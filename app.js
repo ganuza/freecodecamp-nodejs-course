@@ -1,29 +1,37 @@
 // re-create the readFile() writeFile() setup
 
 import fs, { readFile, writeFile } from 'fs';
+import util, { promisify } from 'util';
 
+console.log('util: ', util);
+const readFilePromise = promisify(readFile);
+const writeFilePromise = promisify(writeFile);
 // create a new function to get text using promise
 // we want to take in a path and return a promise
 // then move the readFile function into the new function
-const getText = (path) => {
-  return new Promise((resolve, reject) => {
-    readFile(path, 'utf8', (err, result) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      const firstFileText = result;
-      resolve(result);
-    });
-  });
-};
+// const getText = (path) => {
+//   return new Promise((resolve, reject) => {
+//     readFile(path, 'utf8', (err, result) => {
+//       if (err) {
+//         reject(err);
+//         return;
+//       }
+//       const firstFileText = result;
+//       resolve(result);
+//     });
+//   });
+// };
 
 const showText = async () => {
   try {
-    const firstText = await getText('./content/first.txt');
+    const firstText = await readFilePromise('./content/first.txt', 'utf8');
     console.log('Success: ', firstText);
-    const secondText = await getText('./content/second.txt');
+    const secondText = await readFilePromise('./content/second.txt', 'utf8');
     console.log('Success: ', secondText);
+    const newText = await writeFilePromise(
+      './content/result-promisify-write-file.txt',
+      `${firstText}, ${secondText}`,
+    );
   } catch (error) {
     console.log('Failed: ', error);
   }
@@ -35,9 +43,9 @@ showText();
 // we can now chain a .then and .catch for the error
 
 // first text
-getText('./content/first.txt')
-  .then((result) => console.log(result))
-  .catch((err) => console.log('*Error: ', err));
+// getText('./content/first.txt')
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log('*Error: ', err));
 
 //   readFile('./content/second.txt', 'utf8', (err, result) => {
 //     if (err) {
