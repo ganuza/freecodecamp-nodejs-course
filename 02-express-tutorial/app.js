@@ -1,1 +1,7 @@
-console.log('Express Tutorial')
+import http, { createServer } from 'node:http';
+
+const server = createServer((req, res) => {
+  res.end('Hello World!');
+});
+
+server.listen('8000');
